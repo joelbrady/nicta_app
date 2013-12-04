@@ -58,13 +58,24 @@
       fillOpacity: 0.35
     });
     NSWOutline.setMap(map);
+
+    var data = $.getJSON("abc.json", function(data) {
+        var string = "";
+        var tags = {};
+        console.log(data['australia']);
+        for (key in data['australia']) {
+            string += key;
+        }
         
+        
+        var neBound = new google.maps.LatLng(-19.890723,145.621033);
+        var swBound = new google.maps.LatLng(-31.278551,119.429626);
+        var bounds = new google.maps.LatLngBounds(swBound, neBound);
 
-    var neBound = new google.maps.LatLng(-19.890723,145.621033);
-    var swBound = new google.maps.LatLng(-31.278551,119.429626);
-    var bounds = new google.maps.LatLngBounds(swBound, neBound);
+        overlay = new USGSOverlay(bounds, map, string);
+    });
 
-    overlay = new USGSOverlay(bounds, map, "blah");
+
 
   }
   
