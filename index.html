@@ -30,6 +30,9 @@
     var mapOptions = {
       center: new google.maps.LatLng(-25.045792,133.938446),
       zoom: 5
+      var srcImage = 'https://developers.google.com/maps/documentation/javascript/';
+      srcImage += 'examples/full/images/talkeetna.png';
+      overlay = new USGSOverlay(bounds, srcImage, map);
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
@@ -67,7 +70,8 @@
         position: mapOptions.center
     });
     iwin.open(map);
-        
+  
+
     
   }
   google.maps.event.addDomListener(window, 'load', initialize);
