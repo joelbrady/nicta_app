@@ -96,8 +96,10 @@ function getAustraliaOutline () {
 
 function getNSWOutline() {
   var regionCoords = [
-    // stuff
-
+    new google.maps.LatLng(-29.036961,141.104965),
+    new google.maps.LatLng(-28.22697,153.519516),
+    new google.maps.LatLng(-37.370157,149.894028),
+    new google.maps.LatLng(-34.034453,141.039047)
   ];
   return regionCoords;
 }
