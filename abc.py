@@ -73,13 +73,13 @@ for i in xrange(1, DAYS):
 			elif addr.startswith ('/news/topic/'):
 				topics.append (addr.replace ('/news/topic/', ''))
 
-			"""elif addr.startswith ('?page='):
+			elif addr.startswith ('?page='):
 				if addr not in seen:
 					if not uappend:
 						uappend = addr
 						loaded = False
 						seen.append (addr)
-						#print "will load" ,uappend"""
+						#print "will load" ,uappend
 
 
 for names in EVERYTHING:
