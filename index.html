@@ -17,24 +17,41 @@
 <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?&sensor=true">
 </script>
+<script src="bs.js"></script>
+
+<style>
+    #onetwo {
+        background: yellow;
+        border: 1px solid black;
+        position: absolute;
+        color: red;
+    }
+</style>
+
 <script type="text/javascript">
-  function initialize() {
-    var mapOptions = {
-      center: new google.maps.LatLng(-25.045792,133.938446),
-      zoom: 5
+    function initialize() {
+        var mapOptions = {
+        center: new google.maps.LatLng(-25.045792,133.938446),
+        zoom: 5
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
-        
+     
     var iwin = new google.maps.InfoWindow({
-        content: "boobs",
+        content: "<div id=\"onetwo\">blah</div>",
         position: mapOptions.center
     });
-    iwin.open(map);
-        
     
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
+    iwin.open(map);
+    
+    var swBound = new google.maps.LatLng(62.281819, -150.287132);
+    var neBound = new google.maps.LatLng(62.300471, -150.005608);
+    var bounds = new google.maps.LatLngBounds(swBound, neBound);
+
+  // Photograph courtesy of the U.S. Geological Survey
+    overlay = new USGSOverlay(bounds, map);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </body>
 </html>
