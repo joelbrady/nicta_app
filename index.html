@@ -58,13 +58,26 @@
       fillOpacity: 0.35
     });
     NSWOutline.setMap(map);
+
+    var data = $.getJSON("abc.json", function(data) {
+        var string = "";
+        var tags = {};
+        for (key in data) {
+            tags[data[key]] = 1;
+        }
         
+        for (key in tags) {
+            string += key;
+        }
+        
+        var neBound = new google.maps.LatLng(-19.890723,145.621033);
+        var swBound = new google.maps.LatLng(-31.278551,119.429626);
+        var bounds = new google.maps.LatLngBounds(swBound, neBound);
 
-    var neBound = new google.maps.LatLng(-19.890723,145.621033);
-    var swBound = new google.maps.LatLng(-31.278551,119.429626);
-    var bounds = new google.maps.LatLngBounds(swBound, neBound);
+        overlay = new USGSOverlay(bounds, map, string);
+    });
 
-    overlay = new USGSOverlay(bounds, map, "blah");
+
 
   }
   google.maps.event.addDomListener(window, 'load', initialize);
