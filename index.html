@@ -62,13 +62,11 @@
     var data = $.getJSON("abc.json", function(data) {
         var string = "";
         var tags = {};
-        for (key in data) {
-            tags[data[key]] = 1;
-        }
-        
-        for (key in tags) {
+        console.log(data['australia']);
+        for (key in data['australia']) {
             string += key;
         }
+        
         
         var neBound = new google.maps.LatLng(-19.890723,145.621033);
         var swBound = new google.maps.LatLng(-31.278551,119.429626);
