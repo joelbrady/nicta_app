@@ -28,8 +28,8 @@
 
   function initialize() {
     var mapOptions = {
-      center: new google.maps.LatLng(-25.045792,133.938446),
-      zoom: 5
+      center: new google.maps.LatLng(-32.212801,146.067352),
+      zoom: 6
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
@@ -45,7 +45,7 @@
       fillOpacity: 0.35
     });
 
-    australiaOutline.setMap(map);
+    //australiaOutline.setMap(map);
 
     var nswPath = getNSWOutline();
     var NSWOutline = new google.maps.Polygon({
@@ -56,18 +56,18 @@
       fillColor: '#100000',
       fillOpacity: 0.35
     });
-    //NSWOutline.setMap(map);
+    NSWOutline.setMap(map);
 
     var data = $.getJSON("abc.json", function(data) {
         var string = "";
         var tags = {};
-        console.log(data['australia']);
-        for (key in data['australia']) {
-            string += "<font size=" + data['australia'][key] + ">" + key + "</font>";
+        console.log(data['nsw']);
+        for (key in data['nsw']) {
+            string += "<font size=" + data['nsw'][key] * 3 + ">" + key + "</font>";
         }
         
-        var neBound = new google.maps.LatLng(-19.890723,145.621033);
-        var swBound = new google.maps.LatLng(-31.278551,119.429626);
+        var neBound = new google.maps.LatLng(-29.916852,151.256332);
+        var swBound = new google.maps.LatLng(-35.317366,142.13768);
         var bounds = new google.maps.LatLngBounds(swBound, neBound);
 
         overlay = new USGSOverlay(bounds, map, string);
