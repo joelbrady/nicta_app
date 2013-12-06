@@ -127,3 +127,16 @@ function getQLOutline() {
   ];
   return regionCoords;
 }
+
+
+function getNTOutline() {
+  var regionCoords = [
+    new google.maps.LatLng(-14.944785,129.016112),
+    new google.maps.LatLng(-26.076521,129.060058),
+    new google.maps.LatLng(-25.878994,137.980956),
+    new google.maps.LatLng(-16.636192,137.937011),
+    new google.maps.LatLng(-11.307708,132.839355)
+    
+  ];
+  return regionCoords;
+}
