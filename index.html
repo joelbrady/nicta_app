@@ -47,6 +47,7 @@
 
     australiaOutline.setMap(map);
 
+
     var nswPath = getNSWOutline();
     var NSWOutline = new google.maps.Polygon({
       paths: nswPath,
@@ -64,6 +65,7 @@
     var bounds = new google.maps.LatLngBounds(swBound, neBound);
 
     overlay = new USGSOverlay(bounds, map, "blah");
+
   }
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>

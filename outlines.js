@@ -103,3 +103,27 @@ function getNSWOutline() {
   ];
   return regionCoords;
 }
+
+function getWAOutline() {
+  var regionCoords = [
+    new google.maps.LatLng(-14.944785,128.84079),
+    new google.maps.LatLng(-22.105999,113.987274),
+    new google.maps.LatLng(-34.415973,115.393524),
+    new google.maps.LatLng(-31.765537,128.92868)
+  ];
+  return regionCoords;
+}
+
+function getQLOutline() {
+  var regionCoords = [
+    new google.maps.LatLng(-16.509833,138.006591),
+    new google.maps.LatLng(-25.99755,138.006591),
+    new google.maps.LatLng(-25.99755,140.906982),
+    new google.maps.LatLng(-28.979312,140.994873),
+    new google.maps.LatLng(-28.825425,153.431396),
+    new google.maps.LatLng(-23.019076,150.838623),
+    new google.maps.LatLng(-18.771115,146.246337),
+    new google.maps.LatLng(-10.725381,142.401123)
+  ];
+  return regionCoords;
+}
