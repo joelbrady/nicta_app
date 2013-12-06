@@ -3,11 +3,13 @@ import urllib2
 import re
 
 import json
+from collections import Counter
+
 
 DAYS = 6
 EVERYTHING = {}
 
-states = [
+THE_states = [
 	'australia',
 	'nsw',
 	'act',
@@ -19,7 +21,7 @@ states = [
 ]
 
 def process_topic (topic):
-	global EVERYTHING
+	global EVERYTHING, THE_states
 
 	other = []
 	postcodes = []
@@ -28,7 +30,7 @@ def process_topic (topic):
 	for item in topic:
 		if re.search ('-\d{4}', item):
 			postcodes.append (item[-4:])
-		elif item.lower() in states:
+		elif item.lower().strip() in THE_states:
 			states.append (item)
 		else:
 			item = item.replace ('-', ' ')
@@ -79,5 +81,8 @@ for i in xrange(1, DAYS):
 						seen.append (addr)
 						#print "will load" ,uappend"""
 
+
+for names in EVERYTHING:
+	EVERYTHING[names] =  Counter (EVERYTHING[names])
 
 print json.dumps(EVERYTHING)
