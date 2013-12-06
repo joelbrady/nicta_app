@@ -23,17 +23,6 @@
 </script>
 <script src="bs.js"></script>
 
-<style>
-    #onetwo {
-        background: yellow;
-        border: 1px solid black;
-        position: absolute;
-        color: red;
-    }
-</style>
-
-
-
 <script type="text/javascript">
   
 
@@ -56,31 +45,15 @@
       fillOpacity: 0.35
     });
     
- 
     australiaOutline.setMap(map);
 
-        
-    var iwin = new google.maps.InfoWindow({
-        content: "<div id=\"onetwo\">blah</div>",
-        position: mapOptions.center
-    });
-    
-    iwin.open(map);
-    var iwin = new google.maps.InfoWindow({
-        content: "Censored",
-        position: mapOptions.center
-    });
-    iwin.open(map);
-        
-
-    var swBound = new google.maps.LatLng(62.281819, -150.287132);
-    var neBound = new google.maps.LatLng(62.300471, -150.005608);
+    var neBound = new google.maps.LatLng(-19.890723,145.621033);
+    var swBound = new google.maps.LatLng(-31.278551,119.429626);
     var bounds = new google.maps.LatLngBounds(swBound, neBound);
 
-  // Photograph courtesy of the U.S. Geological Survey
-    overlay = new USGSOverlay(bounds, map);
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
+    overlay = new USGSOverlay(bounds, map, "blah");
+}
+google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 

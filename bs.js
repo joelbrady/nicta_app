@@ -19,11 +19,12 @@ function initialize() {
 }
 
 /** @constructor */
-function USGSOverlay(bounds, map) {
+function USGSOverlay(bounds, map, text) {
 
   // Now initialize all properties.
   this.bounds_ = bounds;
   this.map_ = map;
+  this.text_ = text;
 
   // We define a property to hold the image's div. We'll
   // actually create this div upon receipt of the onAdd()
@@ -43,13 +44,13 @@ USGSOverlay.prototype.onAdd = function() {
   // Create the DIV and set some basic attributes.
   var div = document.createElement('div');
   div.style.borderStyle = 'solid';
-  div.style.borderWidth = '1px';
+  div.style.borderWidth = '0';
   div.style.borderColor = '#FFF';
-  div.style.color = '#FFF';
+  div.style.color = '#000000';
   div.style.position = 'absolute';
 
   // Create an IMG element and attach it to the DIV.
-  div.innerHTML= "HELLO WORLD";
+  div.innerHTML= this.text_;
 
   // Set the overlay's div_ property to this DIV
   this.div_ = div;
